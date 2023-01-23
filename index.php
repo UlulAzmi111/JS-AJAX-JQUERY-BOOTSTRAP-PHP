@@ -7,7 +7,9 @@
     <title>Ajax-Jquery Bootstrap PHP</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
             rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
     <script src="js/jquery.js"></script>
+    
     <script src="js/app.js" defer></script>
   </head>
 
@@ -19,34 +21,40 @@
         </div>
 
         <div class="row mt-4" style="text-align: left;">
+
             <div class="col">
+
                 <div class="row">
                     <h2>Input Data Pelanggan</h2>
                 </div>
                 <div class="row">
+                    <div id="msg"></div>
                     <form>
                         <div class="mb-3">
+                        <input type="text" class="form-control" id="id" required aria-describedby="emailHelp">
                             <label for="exampleInputEmail1" class="form-label">Pelanggan</label>
-                            <input type="text" class="form-control" id="pelanggan" aria-describedby="emailHelp">
+                            <input type="text" class="form-control" id="pelanggan" required aria-describedby="emailHelp">
                             <div id="emailHelp" class="form-text">Harus diisi</div>
                         </div>
 
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Alamat</label>
-                            <input type="text" class="form-control" id="alamat">
+                            <input type="text" class="form-control" id="alamat" required>
                             <div id="emailHelp" class="form-text">Harus diisi</div>
                         </div>
 
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Telp</label>
-                            <input type="text" class="form-control" id="telp">
+                            <input type="text" class="form-control" id="telp" required>
                             <div id="emailHelp" class="form-text">Harus diisi</div>
                         </div>
 
-                        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" id="submit" class="btn btn-primary">Simpan</button>
                     </form>
                 </div>
             </div>
+
+
             <div class="col">
                 <div class="row">
                     <h2>Data Pelanggan</h2>
@@ -62,7 +70,6 @@
                             </tr>
                         </thead>
                         <tbody id="isidata">
-                            
                         </tbody>
                     </table>
                 </div>
