@@ -125,7 +125,26 @@ $(document).ready(function () {
     }
 
     function updateData() {
-        alert("update");
+        let dataPelanggan = {  
+            idpelanggan : id,
+            pelanggan : pelanggan,
+            alamat : alamat,
+            telp : telp
+        }
+
+        $.ajax({
+            type: "pos",
+            url: "php/update.php",
+            cache: false,
+            data: JSON.stringify(dataPelanggan),
+            // dataType: "dataType",
+            success: function (response) {
+                let out = `<p>${response}</p>`;
+                $("#msg").html(out);
+            }
+        });
+
+        selectData();
     }
 
     selectData();
