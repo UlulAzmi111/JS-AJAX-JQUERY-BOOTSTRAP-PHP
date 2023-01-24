@@ -24,13 +24,34 @@ $(document).ready(function () {
 
     });
 
+    $("#btn-tambah").click(function (e) { 
+        e.preventDefault();
+        
+        $("#titel").html("<p>Tambah Data</p>");
+
+        $("#id").val("");
+        $("#pelanggan").val("");
+        $("#alamat").val("");
+        $("#telp").val("");
+
+    });
+
+
     $("tbody").on("click", ".btn-del", function () {
         let id = $(this).attr(data-id);
-        deleteData(id);
+        
+        if (confirm("Yakin Akan Menghapus ?")) {
+            deleteData(id);
+        }
     });
 
     $("tbody").on("click", ".btn-ubah", function () {
         let id = $(this).attr(data-id);
+        selectUpdate(id);
+    });
+
+    $("tbody").on("click", ".btn-ubah", function () {
+        $("#titel").html("<p>Ubah Data</p>");
         selectUpdate(id);
     });
 
@@ -110,7 +131,7 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            type: "pos",
+            type: "post",
             url: "php/delete.php",
             cache: false,
             data: JSON.stringify(idpelanggan),
