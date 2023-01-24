@@ -39,7 +39,7 @@ $(document).ready(function () {
 
     $("tbody").on("click", ".btn-del", function () {
         let id = $(this).attr(data-id);
-        
+
         if (confirm("Yakin Akan Menghapus ?")) {
             deleteData(id);
         }
@@ -131,7 +131,7 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            type: "post",
+            type: "pos",
             url: "php/delete.php",
             cache: false,
             data: JSON.stringify(idpelanggan),
